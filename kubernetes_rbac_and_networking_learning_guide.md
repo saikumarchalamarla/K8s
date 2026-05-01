@@ -1,7 +1,7 @@
-# 🚀 Kubernetes RBAC, Networking & Enterprise Security Guide
+# 🚀 Kubernetes Authentication, RBAC, Basic Networking
 
 ## 📌 Overview
-This guide covers **hands-on Kubernetes RBAC setup, pod-to-pod communication, service exposure, and enterprise-grade security architecture** using Minikube.
+This guide covers **hands-on Kubernetes RBAC setup, pod-to-pod communication, service exposure using Minikube.
 
 Focus is on:
 - Authentication
@@ -227,117 +227,10 @@ NGINX Pod
 
 ---
 
-# 🧠 14. Enterprise Security Evolution
 
-## Required layers:
 
-### Namespace Isolation
-- frontend
-- backend
-- database
 
----
-
-### RBAC
-- Developers
-- Operators
-- Security teams
-
----
-
-### Network Policies
-Restrict pod communication.
-
-Example:
-```yaml
-apiVersion: networking.k8s.io/v1
-kind: NetworkPolicy
-metadata:
-  name: allow-ui-to-nginx
-spec:
-  podSelector:
-    matchLabels:
-      app: nginx
-  ingress:
-  - from:
-    - podSelector:
-        matchLabels:
-          app: ui
-```
-
----
-
-### Ingress Controller
-- HTTPS
-- TLS termination
-- Domain routing
-
----
-
-### Secrets Management
-- Kubernetes Secrets
-- Hashicorp Vault
-- Azure Key Vault
-
----
-
-### Service Accounts
-Avoid default identities.
-
----
-
-# 🧠 15. Enterprise Architecture
-
-```bash
-Internet
-   ↓
-Ingress + TLS + WAF
-   ↓
-Frontend Service
-   ↓
-Backend Service
-   ↓
-Application Layer
-   ↓
-Database Layer
-```
-
----
-
-# 🧠 16. Security Comparison
-
-| Level | Beginner | Enterprise |
-|------|----------|------------|
-| Access | NodePort | Ingress + WAF |
-| Security | Basic RBAC | Granular RBAC |
-| Networking | Flat | NetworkPolicy |
-| Secrets | Hardcoded | Vault |
-| Encryption | HTTP | HTTPS/TLS |
-| Identity | Default SA | Dedicated SA |
-| Monitoring | Minimal | Prometheus/Grafana |
-
----
-
-# 🧠 17. Real Production Tools
-
-### Networking:
-- NGINX Ingress
-- Istio
-- Linkerd
-
-### Security:
-- OPA Gatekeeper
-- Falco
-- Azure AD Workload Identity
-
-### Monitoring:
-- Prometheus
-- Grafana
-- Loki
-
----
-
-# 🧠 18. Common Errors Faced
+# 🧠 17. Common Errors Faced
 
 ## VirtualBox failure:
 ```bash
