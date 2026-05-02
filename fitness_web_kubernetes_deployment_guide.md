@@ -1,7 +1,7 @@
 # 🚀 FitnessWeb Kubernetes Deployment Guide
 
 ## 📌 Overview
-This guide documents the real deployment journey of the **FitnessWeb Django application** from Docker containerization to Kubernetes deployment using Minikube.(Finf app details-https://github.com/saikumarchalamarla/FitnessWeb)
+This guide documents the real deployment journey of the **FitnessWeb Django application** from Docker containerization to Kubernetes deployment using Minikube.(Find app details-https://github.com/saikumarchalamarla/FitnessWeb)
 
 Focus:
 - Docker build
